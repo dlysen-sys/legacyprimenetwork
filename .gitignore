@@ -25,3 +25,4 @@ CLAUDE.local.md
 .vscode/*
 !.vscode/extensions.json
 .idea/
+.gstack/

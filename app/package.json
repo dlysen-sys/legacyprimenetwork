@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "[ ! -f /Volumes/ClaudeOs/tools/package-cpanel.sh ] || bash /Volumes/ClaudeOs/tools/package-cpanel.sh",
+    "postbuild": "cp dist/index.html dist/404.html && touch dist/.nojekyll && { [ ! -f /Volumes/ClaudeOs/tools/package-cpanel.sh ] || bash /Volumes/ClaudeOs/tools/package-cpanel.sh; }",
     "lint": "oxlint",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname legacyprimenetwork.com"
+    "deploy": "gh-pages -d dist --dotfiles --cname legacyprimenetwork.com"
   },
   "dependencies": {
     "@reown/appkit": "^1.8.22",
