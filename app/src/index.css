@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* LegacyPrime theme — purple + gold. Neutrals carry a faint violet bias (chosen, not default).
+   Light on :root, dark on .dark; exposed as Tailwind color tokens via @theme inline so utilities
+   like bg-bg / text-fg / bg-primary / text-accent / border-border resolve to these variables. */
+:root {
+  --color-bg: #fbfaff;          /* faint violet-white */
+  --color-surface: #f3f0fb;     /* raised panel */
+  --color-border: #e7e1f2;
+  --color-fg: #171320;          /* near-black, violet bias */
+  --color-muted: #6b6480;
+  --color-primary: #7c3aed;     /* violet 600 */
+  --color-primary-fg: #ffffff;  /* text on primary */
+  --color-accent: #c98a06;      /* gold — readable on light */
+  --color-accent-fg: #1a1206;   /* text on gold */
+}
+.dark {
+  --color-bg: #0e0b16;          /* deep purple-black */
+  --color-surface: #171021;     /* raised panel */
+  --color-border: #271d3d;
+  --color-fg: #ece7f8;          /* off-white, violet bias */
+  --color-muted: #9a90b4;
+  --color-primary: #a78bfa;     /* violet 400 — pops on dark */
+  --color-primary-fg: #1a1526;  /* text on primary */
+  --color-accent: #f6c445;      /* gold — pops on dark */
+  --color-accent-fg: #1a1206;   /* text on gold */
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-fg: var(--color-fg);
+  --color-muted: var(--color-muted);
+  --color-primary: var(--color-primary);
+  --color-primary-fg: var(--color-primary-fg);
+  --color-accent: var(--color-accent);
+  --color-accent-fg: var(--color-accent-fg);
+}
+
+html { color-scheme: light dark; }
+body { background: var(--color-bg); color: var(--color-fg); }

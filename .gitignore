@@ -1,0 +1,27 @@
+# ---------- secrets / env ----------
+.env
+.env.*
+!.env.example
+*.local
+
+# ---------- dependencies & build output ----------
+node_modules/
+dist/
+dist.zip
+dist-ssr/
+contracts/artifacts/
+out/
+cache/
+
+# ---------- internal working docs (not published) ----------
+sessions/
+docs/
+CLAUDE.md
+CLAUDE.local.md
+
+# ---------- os / editor ----------
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea/
