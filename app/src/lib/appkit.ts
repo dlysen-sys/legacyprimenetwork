@@ -6,7 +6,7 @@ import { http } from 'wagmi'
 // Reown AppKit + wagmi adapter. Set your own Project ID from dashboard.reown.com in
 // .env (VITE_REOWN_PROJECT_ID); the placeholder lets injected wallets (MetaMask) connect
 // but WalletConnect/QR needs a real id.
-const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || 'REPLACE_WITH_REOWN_PROJECT_ID'
+const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || '3114629b3157317b0cf3be442a510ede'
 
 // ── Network selector (movi-style) ─────────────────────────────────────────────
 // Flip this one line to point the whole app at a network. 'local' = the shared NAS anvil
@@ -45,11 +45,12 @@ createAppKit({
   projectId,
   networks,
   defaultNetwork: active.chain,
+  // metadata.url MUST match the deployed origin — WalletConnect warns (and some wallets reject) on mismatch.
   metadata: {
-    name: 'LegacyPrime',
+    name: 'LegacyPrime Network',
     description: 'A tiered (70/100/200 USDT) affiliate protocol on BNB Smart Chain.',
-    url: 'https://legacyprime.app',
-    icons: ['https://legacyprime.app/logo.svg'],
+    url: 'https://legacyprimenetwork.com',
+    icons: ['https://legacyprimenetwork.com/logo.svg'],
   },
   features: { analytics: false },
 })
