@@ -1,0 +1,1 @@
+import"./wui-shimmer-BY2PI1le.js";
